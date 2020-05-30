@@ -1,0 +1,146 @@
+﻿
+@{
+    Layout = null;
+}
+@model List<rotativa_sample.Models.Student>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - rotativa_sample</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <table class="report-container" style="width:100%">
+        <thead class="report-header">
+            <tr>
+                <th>
+                    <div class="header-info" >
+                        <div class="  head"><h1>மாணவர்களின் வருகை பதிவு </h1></div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tfoot class="report-footer">
+            <tr>
+                <td>
+                    <div class="footer-info">
+                        footer
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody class="report-content">
+            <tr>
+                <td>
+                    <div class="main">
+                        <table style="width:100%" id="students">
+                            <thead >
+                                <tr>
+                                    <td>
+                                        எண்
+                                    </td>
+                                    <td>
+                                        பெயர்
+                                    </td>
+                                    <td>
+                                        வகுப்பு
+                                    </td>
+                                    <td>
+                                        பிரிவு
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var student in Model)
+                                {
+                                <tr>
+                                    <td>@student.ID</td>
+                                    <td>@student.Name</td>
+                                    <td>@student.Class</td>
+                                    <td>@student.Section</td>
+
+                                </tr>
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <style>
+        @@import url(//fonts.googleapis.com/earlyaccess/karlatamilinclined.css);
+        /*CSS*/
+        body {
+            font-family: 'Karla Tamil Inclined', sans-serif!important;
+        }
+        thead.report-header {
+            display: table-header-group;
+        }
+
+        tfoot.report-footer {
+            display: table-footer-group;
+        }
+
+        table.report-container {
+            page-break-after: always;
+        }
+        .head{
+            background-color:darkmagenta;
+            color:white;
+            width:1200px;
+            height:50px;
+            padding:10px;
+            font-size:x-large;
+            font-weight: bolder;
+        }
+        #students thead tr  td {
+            background-color: darkorange;
+            color: white;
+            padding: 10px;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        #students {
+               margin:20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #students td, #students th {
+                border: 1px solid #ddd;
+                padding: 8px;
+                font-size: x-large;
+                font-weight: bolder;
+            }
+
+            #students tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #students tr:hover {
+                background-color: #ddd;
+            }
+
+            #students th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+    </style>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+
+
