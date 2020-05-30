@@ -9,9 +9,13 @@ namespace rotativa_sample.Controllers
 {
     public class StudentController : Controller
     {
+        /// <summary>
+        /// Method to return PDF to the view
+        /// </summary>
+        /// <returns>PDF file</returns>
         public IActionResult Index()
         {
-            return new Rotativa.AspNetCore.ViewAsPdf("Index", GetStudents());
+            return new Rotativa.AspNetCore.ViewAsPdf("Index", GetStudents());  // Index view name
             //return View();
         }
        
